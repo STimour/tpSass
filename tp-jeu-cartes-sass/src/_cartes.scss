@@ -2,6 +2,10 @@
 @use 'sass:math';
 
 
+$outsideHeight: 125px;
+$outsideWidth: 80px;
+$insideSize: 85%;
+$spacing: 5%;
 $colorFond: #279527;
 $colorWhite: #ffffff;
 $colorBorderBlack: #000000;
@@ -13,9 +17,9 @@ borderCarte{
 
 #app__first-carte{
     background: $colorWhite;
-    height: 150px;
-    width: 100px;
-    margin: 50px 0 0 50px;
+    height: $outsideHeight;
+    width: $outsideWidth;
+    margin: $spacing 0 0 $spacing;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,8 +30,8 @@ borderCarte{
 
     .first-carte__inside{
         background: $colorWhite;
-        height: 130px;
-        width: 80px;
+        height: $insideSize;
+        width: $insideSize;
         @extend borderCarte;
         display: flex;
         flex-direction: column;
@@ -38,29 +42,27 @@ borderCarte{
         display: flex;
         justify-content: space-between;
         flex-grow: 1;
-        padding: 5%;
+        padding:$spacing;
         p{
-            margin-top: 5px;
+            margin-top:$spacing;
         }
     }
     .inside-container__center{
         display: flex;
         justify-content: center;
-        font-size: 24px;
+        font-size: 1.5rem;
         flex-grow: 2;
-
         p{
             margin: 0;
-
         }
     }
     .inside-container__bottom{
         display: flex;
         justify-content: space-between;
         flex-grow: 1;
-        padding: 5%;
+        padding:$spacing;
         p{
-            margin-bottom: 0;
+            padding: 0;
         }
     }
 
