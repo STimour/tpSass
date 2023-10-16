@@ -35,7 +35,10 @@ borderCarte{
         display: flex;
         justify-content: space-between;
         flex-grow: 1;
-        padding: 0 5%;
+        padding: 5%;
+        p{
+            margin-top: 5px;
+        }
     }
     .inside-container__center{
         display: flex;
@@ -52,7 +55,10 @@ borderCarte{
         display: flex;
         justify-content: space-between;
         flex-grow: 1;
-        padding: 0 5%;
+        padding: 5%;
+        p{
+            margin-bottom: 0;
+        }
     }
 
 }
