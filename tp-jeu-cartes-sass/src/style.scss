@@ -1,4 +1,19 @@
+@use 'sass:color';
+
+$colorFond: #279527;
+$colorBorder: #ffffff;
+
 body{
-    background: green;
+    background: $colorFond;
     min-height: 100%;
+
+    #app{
+        margin: auto;
+        width: 800px;
+        height: 600px;
+        border-radius: 15px;
+        border: 1px $colorBorder solid;
+        background: color.scale($colorFond, $lightness: 30%)
+    }
 }
+
