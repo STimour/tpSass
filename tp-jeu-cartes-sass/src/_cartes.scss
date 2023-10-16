@@ -1,0 +1,60 @@
+@use 'sass:color';
+
+$colorFond: #279527;
+$colorWhite: #ffffff;
+$colorBorderBlack: #000000;
+
+borderCarte{
+    border: $colorBorderBlack 1px solid;
+    border-radius: 15px;
+}
+
+#app__first-carte{
+    background: $colorWhite;
+    height: 150px;
+    width: 100px;
+    margin: 50px 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-content: space-between;
+    @extend borderCarte;
+
+    .first-carte__inside{
+        background: $colorWhite;
+        height: 130px;
+        width: 80px;
+        @extend borderCarte;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .inside-container__top{
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 0 5%;
+    }
+    .inside-container__center{
+        display: flex;
+        justify-content: center;
+        font-size: 24px;
+        flex-grow: 2;
+
+        p{
+            margin: 0;
+
+        }
+    }
+    .inside-container__bottom{
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+        padding: 0 5%;
+    }
+
+}
+
+

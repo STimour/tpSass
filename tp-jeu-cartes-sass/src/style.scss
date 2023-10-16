@@ -1,7 +1,9 @@
 @use 'sass:color';
 
 $colorFond: #279527;
-$colorBorder: #ffffff;
+$colorWhite: #ffffff;
+
+@import '_cartes';
 
 body{
     background: $colorFond;
@@ -12,7 +14,7 @@ body{
         width: 800px;
         height: 600px;
         border-radius: 15px;
-        border: 1px $colorBorder solid;
+        border: 1px $colorWhite solid;
         background: color.scale($colorFond, $lightness: 30%)
     }
 }
