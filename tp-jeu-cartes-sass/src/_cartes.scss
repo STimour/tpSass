@@ -1,4 +1,6 @@
 @use 'sass:color';
+@use 'sass:math';
+
 
 $colorFond: #279527;
 $colorWhite: #ffffff;
@@ -19,6 +21,7 @@ borderCarte{
     justify-content: center;
     flex-direction: column;
     align-content: space-between;
+    transform: rotate(math.random(360) * 1deg);
     @extend borderCarte;
 
     .first-carte__inside{
