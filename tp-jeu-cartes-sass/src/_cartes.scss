@@ -25,7 +25,7 @@ $colorBorderBlack: #000000;
 @mixin flexDem($justify, $align){
     display: flex;
     justify-content: $justify;
-    align-items: $align;
+    align-self: $align;
 }
 
 
@@ -39,7 +39,7 @@ borderCarte{
     #app__#{$i}-carte{
     background: $colorWhite;
     position: absolute;
-    top: 40px * $i;
+    top: 50px * $i;
     height: $outsideHeight;
     width: $outsideWidth;
     margin-left: $spacing;
@@ -59,21 +59,78 @@ borderCarte{
         flex-direction: column;
         align-content: space-between;
     }
-
     .inside-container__top{
-        @include flexDem(space-between, center);
+        @include flexDem(flex-start, flex-start);
         flex-grow: 1;
         padding:$spacing;
     }
     .inside-container__center{
-        @include flexDem(center, center);
         font-size: 1.5rem;
         flex-grow: 2;
+        top: 40%;
+        left: 35%;
+        position: absolute;
     }
     .inside-container__bottom{
-        @include flexDem(space-between, center);
+        @include flexDem(flex-end, flex-end);
+        transform: rotate(180deg);
         flex-grow: 1;
         padding:$spacing;
     }
 }
+}
+
+.main-exo7{
+    margin: $spacing 0 0 200px;
+}
+$nbCartes: 6;
+$angle: 15deg;
+$initialAngle: math.div($nbCartes, 2) * $angle * -1;
+@for $i from 1 through $nbCartes{
+    .cartes-#{$i}{
+    background: $colorWhite;
+    position: absolute;
+    height: $outsideHeight;
+    width: $outsideWidth;
+    left: $i * math.div($outsideWidth, 3) + 150px;
+        @if $i< math.div($nbCartes, 2){
+            top: math.div($outsideHeight, 10) * ($nbCartes - $i) - 5
+        } @else{
+            top: math.div($outsideHeight, 10) * $i + 5;
+        }
+    @include flexGen(column, center, center);
+    rotate: $initialAngle + ($i * $angle);
+    
+    @extend borderCarte;
+    
+    }
+
+    .first-carte__inside{
+        background: $colorWhite;
+        height: $insideSize;
+        width: $insideSize;
+        @extend borderCarte;
+        display: flex;
+        flex-direction: column;
+        align-content: space-between;
+    }
+
+    .inside-container__top{
+        @include flexDem(flex-start, flex-start);
+        flex-grow: 1;
+        padding:$spacing;
+    }
+    .inside-container__center{
+        font-size: 1.5rem;
+        flex-grow: 2;
+        top: 40%;
+        left: 35%;
+        position: absolute;
+    }
+    .inside-container__bottom{
+        @include flexDem(flex-end, flex-end);
+        transform: rotate(180deg);
+        flex-grow: 1;
+        padding:$spacing;
+    }
 }
