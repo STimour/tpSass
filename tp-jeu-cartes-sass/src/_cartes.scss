@@ -1,6 +1,11 @@
 @use 'sass:color';
 @use 'sass:math';
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
 $outsideHeight: 125px;
 $outsideWidth: 80px;
@@ -9,6 +14,20 @@ $spacing: 5%;
 $colorFond: #279527;
 $colorWhite: #ffffff;
 $colorBorderBlack: #000000;
+
+@mixin flexGen($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flexDem($justify, $align){
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
 
 borderCarte{
     border: $colorBorderBlack 1px solid;
@@ -20,10 +39,7 @@ borderCarte{
     height: $outsideHeight;
     width: $outsideWidth;
     margin: $spacing 0 0 $spacing;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+    @include flexGen(column, center, center);
     align-content: space-between;
     transform: rotate(math.random(360) * 1deg);
     @extend borderCarte;
@@ -39,31 +55,19 @@ borderCarte{
     }
 
     .inside-container__top{
-        display: flex;
-        justify-content: space-between;
+        @include flexDem(space-between, center);
         flex-grow: 1;
         padding:$spacing;
-        p{
-            margin-top:$spacing;
-        }
     }
     .inside-container__center{
-        display: flex;
-        justify-content: center;
+        @include flexDem(center, center);
         font-size: 1.5rem;
         flex-grow: 2;
-        p{
-            margin: 0;
-        }
     }
     .inside-container__bottom{
-        display: flex;
-        justify-content: space-between;
+        @include flexDem(space-between, center);
         flex-grow: 1;
         padding:$spacing;
-        p{
-            padding: 0;
-        }
     }
 
 }
