@@ -34,15 +34,21 @@ borderCarte{
     border-radius: 15px;
 }
 
-#app__first-carte{
+@for $i from 1 through 5{
+
+    #app__#{$i}-carte{
     background: $colorWhite;
+    position: absolute;
+    top: 40px * $i;
     height: $outsideHeight;
     width: $outsideWidth;
-    margin: $spacing 0 0 $spacing;
+    margin-left: $spacing;
     @include flexGen(column, center, center);
     align-content: space-between;
-    transform: rotate(math.random(360) * 1deg);
+    //transform: rotate(math.random(360) * 1deg);
     @extend borderCarte;
+
+  
 
     .first-carte__inside{
         background: $colorWhite;
@@ -69,7 +75,5 @@ borderCarte{
         flex-grow: 1;
         padding:$spacing;
     }
-
 }
-
-
+}
